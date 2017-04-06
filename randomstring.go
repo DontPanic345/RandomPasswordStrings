@@ -37,11 +37,11 @@ func CheckIfContainsAllGroups(str string) bool {
 }
 
 func main() {
-	s := RandStringBytes(7)
-	count := 1
-	for ; CheckIfContainsAllGroups(s) == false; count++ {
-		s = RandStringBytes(7)
+	for i := 0; i < 15; i++ {
+		s := RandStringBytes(7)
+		for ; CheckIfContainsAllGroups(s) == false; {
+			s = RandStringBytes(7)
+		}
+		fmt.Printf("%s\n", s)
 	}
-	fmt.Printf("%s\n", s)
-	fmt.Printf("%v\n", count)
 }
